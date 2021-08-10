@@ -1,1 +1,202 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'node_modules/bulma/sass/utilities/initial-variables';
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+:root {
+  --purple: #8A4D76;
+  --pink: #FA7C91;
+  --brown: #757763;
+  --beige-light: #D0D1CD;
+  --beige-lighter: #EFF0EB;
+  --modis-background: #FAFAFA;
+  --modis-title: #AFAFAF;
+  //--modis-text: #6F6F6F;
+  --modis-text: #3F3F3F;
+  --modis-selected-text: #3F3F3F;
+  --modis-input-text: #3F3F3F;
+  --modis-orange: #EB640C;
+  --gray-darker: #8DAAB5;
+  --modis-black: #000000;
+  --modis-white: #FFFFFF;
+  --modis-hover: #E6E6E6;
+  --modis-card: #EFEFEF;
+  --modis-input-border: #AFAFAF;
+  //--modis-one-orange: #8BBA8B;
+  //--modis-one-orange: #F2A516;
+  //--modis-one-orange: #F29F05;
+  --modis-one-orange: #72CDF7;
+  //--modis-one-orange: #EB640C;
+  --modis-one-yellow: #F2E96D;
+  --modis-one-dark: #2c4f5f;
+  --modis-one-border: #93aab4;
+  //--modis-one-dark: #6E3C55;
+  --modis-navbar-divider: #FAFAFA;
+}
+//dark theme
+[data-theme="dark"] {
+  --purple: #8A4D76;
+  --pink: #FA7C91;
+  --brown: #757763;
+  --beige-light: #D0D1CD;
+  --beige-lighter: #EFF0EB;
+  --modis-background: #02222E;
+  --modis-title: #204F61;
+  --modis-text: #8DAAB5;
+  --modis-selected-text: #D0D1CD;
+  --modis-input-text: #000000;
+  --modis-orange: #EB8F0C;
+  --gray-darker: #8DAAB5;
+  --modis-black: #000000;
+  --modis-white: #FFFFFF;
+  --modis-hover: #2E060F;
+  --modis-card: #0D3747;
+  --modis-input-border: #AFAFAF;
+  //--modis-one-orange: #8BBA8B;
+  //--modis-one-orange: #F2A516;
+  //--modis-one-orange: #F29F05;
+  //--modis-one-orange: #72CDF7;
+  --modis-one-orange: #EB8F0C;
+  --modis-one-yellow: #F2E96D;
+  --modis-one-dark: #2c4f5f;
+  --modis-one-border: #93aab4;
+  //--modis-one-dark: #6E3C55;
+  --modis-navbar-divider: #FAFAFA;
+}
+
+$purple: var(--purple);
+$pink: var(--pink);
+$brown: var(--brown);
+$beige-light: var(--beige-light);
+$beige-lighter: var(--beige-lighter);
+$modis-background: var(--modis-background);
+$modis-title: var(--modis-title);
+$modis-text: var(--modis-text);
+$modis-selected-text: var(--modis-selected-text);
+$modis-input-text: var(--modis-input-text);
+$modis-orange: var(--modis-orange);
+$gray-darker: var(--gray-darker);
+$modis-black: var(--modis-black);
+$modis-white: var(--modis-white);
+$modis-hover: var(--modis-hover);
+$modis-card: var(--modis-card);
+$modis-input-border: var(--modis-input-border);
+$modis-one-orange: var(--modis-one-orange);
+$modis-one-yellow: var(--modis-one-yellow);
+$modis-one-dark: var(--modis-one-dark);
+$modis-one-border: var(--modis-one-border);
+$modis-navbar-divider: var(--modis-navbar-divider);
+
+// Update Bulma's global variables
+$family-sans-serif: 'Lato', sans-serif;
+//$family-sans-serif: 'Raleway', sans-serif;
+//$family-sans-serif: 'Merriweather Sans', sans-serif;
+//$family-sans-serif: 'Inter', sans-serif;
+//$family-sans-serif: 'Noto Sans TC', sans-serif;
+
+//$primary: var(--modis-title);
+//$link: var(--pink);
+//$link: var(--modis-title);
+$primary: var(--modis-one-dark);
+$link: var(--modis-one-dark);
+$widescreen-enabled: false;
+$fullhd-enabled: false;
+
+// Update some of Bulma's component variables
+$body-background-color: $modis-background;
+$background: $modis-navbar-divider; // Navbar Divider
+$text-strong: $modis-input-text; // default text color defined at bottom of css
+//$body-background-color: $pink;
+$panel-item-border: 1px solid $pink;
+$panel-heading-line-height: 0.75;
+$panel-heading-size: 2em;
+$panel-heading-background-color: $pink;
+$panel-radius: 22px;
+$control-border-width: 2px;
+//$input-border-color: transparent;
+//$input-border-color: $modis-input-border;
+//$input-disabled-border-color: var(--modis-input-border);
+$input-border-color: $modis-one-border;
+$input-disabled-border-color: $modis-one-border;
+$input-hover-border-color: $modis-one-border;
+$input-focus-border-color: $modis-one-dark;
+$input-focus-box-shadow-size: 0 0 0 0;
+$input-focus-box-shadow-color: $modis-one-border;
+$input-shadow: none;
+$label-color: $modis-text;
+$title-color: $modis-text;
+$table-background-color: transparent;
+//$table-head-background-color: $modis-title;
+$table-head-background-color: $modis-one-dark;
+$table-head-cell-color: $modis-white;
+$table-color: $modis-text;
+$table-row-active-background-color: $modis-one-orange;
+$table-row-active-color: $modis-selected-text;
+//$table-row-active-color: $modis-white;
+$table-row-hover-background-color: $modis-hover;
+$table-cell-border: 1px solid $modis-text;
+//$card-header-background-color: $modis-title;
+$card-header-background-color: $modis-one-dark;
+$card-header-color: $modis-white;
+$card-content-background-color: $modis-card;
+$card-content-padding: 0.5em;
+$card-header-padding: 0.5em;
+$card-color: $modis-black;
+$section-padding: 0.5em 0.5em;
+$pagination-current-background-color: $primary;
+
+.card {
+  border: 1px solid $modis-text;
+}
+.panel {
+  border: 1px solid $modis-text;
+}
+.data-display {
+  color: $modis-black;
+}
+
+//Variables moved from component styles
+//DONE - Holds
+$font-size-large: 2em;
+$padding-top-small: 0.1em;
+$padding-top-large: 0.5em;
+$padding-bottom-small: 0.1em;
+$padding-bottom-large: 0.5em;
+$padding-bottom-x-large: 1em;
+
+.data-label {
+  font-weight: bold;
+}
+.data-label-large {
+  font-weight: bold;
+  font-size: $font-size-large;
+}
+.column.detail {
+  padding-top: $padding-top-small;
+  padding-bottom: $padding-bottom-small;
+}
+.column.detail.top {
+  padding-top: $padding-top-large;
+  padding-bottom: $padding-bottom-small;
+}
+.column.detail.bottom {
+  padding-top: $padding-top-small;
+  padding-bottom: $padding-bottom-large;
+}
+.column.detail.topbottom {
+  padding-top: $padding-top-large;
+  padding-bottom: $padding-bottom-x-large;
+}
+
+
+@import "../node_modules/bulma/sass/utilities/_all.sass";
+@import "../node_modules/bulma/sass/base/_all.sass";
+@import "../node_modules/bulma/sass/elements/button.sass";
+@import "../node_modules/bulma/sass/elements/container.sass";
+@import "../node_modules/bulma/sass/elements/title.sass";
+@import "../node_modules/bulma/sass/form/_all.sass";
+@import "../node_modules/bulma/sass/components/navbar.sass";
+@import "../node_modules/bulma/sass/layout/hero.sass";
+@import "../node_modules/bulma/sass/layout/section.sass";
+@import "../node_modules/bulma/sass/elements/table.sass";
+//@import "../node_modules/bulma/sass/components/card.sass";
+//@import "../node_modules/bulma/sass/components/pagination.sass";

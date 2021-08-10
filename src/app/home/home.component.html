@@ -1,0 +1,60 @@
+<div class="container">
+  <div class="columns">
+    <div class="column">
+      <div class="buttons" style="margin-bottom: 0px;">
+
+        <button #pwaInstallButton type="button" class="button is-link" (click)="install()">INSTALL</button>
+        <button type="button" class="button is-link" (click)="logout()">LOGOUT</button>
+
+      </div>
+    </div>
+  </div>
+  <div class="columns">
+    <div class="column">
+      <table class="table is-hoverable is-fullwidth is-bordered is-size-7">
+
+        <thead>
+        <tr>
+          <th>INVOICE #</th>
+          <th>ADDRESS</th>
+          <th>STATUS</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let serviceCallDisplay of serviceCallDisplays">
+          <td>{{serviceCallDisplay.invoiceNumber}}</td>
+          <td>{{serviceCallDisplay.fullAddress}}</td>
+          <td>{{serviceCallDisplay.status}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<script>
+  var promptEvent;
+  var btn = document.querySelector('#pwaInstallButton');
+
+  window.addEventListener('beforeinstallprompt', (event) => {
+    promptEvent = event;
+    btn.style.display = 'block';
+    console.log('beforeinstallprompt caught');
+  });
+
+  btn.addEventListener('click', () => {
+    console.log('click');
+    if (promptEvent) {
+      promptEvent.prompt();
+      promptEvent.userChoice.then((result) => {
+        if (result.outcome === 'accepted') {
+          console.log('user accepted add to homescreen');
+        } else {
+          console.log('user dismissed the add to homescreen');
+        }
+        promptEvent = undefined;
+      });
+    }
+  });
+</script>

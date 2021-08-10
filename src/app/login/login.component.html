@@ -1,0 +1,55 @@
+<section class="section is-fullheight">
+  <div class="container">
+<!--    <div class="columns">-->
+
+<!--      <div class="column">-->
+
+<!--        <button type="button" class="button is-fullwidth is-link "  (click)="addToHomeScreen()">ADD TO HOME SCREEN</button>-->
+
+<!--      </div>-->
+<!--    </div>-->
+    <div class="columns is-centered">
+
+
+      <div class="column is-5-tablet is-4-desktop is-3-widescreen">
+        <form [formGroup]="loginFormGroup">
+          <div class="field">
+            <div class="columns">
+              <div class="column is-12">
+                <img src="assets/modis2applogo.png" alt="logo">
+              </div>
+            </div>
+          </div>
+
+
+
+          <div class="field">
+            <label class="label is-size-7" style="margin-bottom: 0px;">USERNAME</label>
+            <div class="control has-icons-left">
+              <input #username class="input" type="text" placeholder="USERNAME" [formControl]="formUsername" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+              <span class="icon is-small is-left">
+                <i class="fa fa-user"></i>
+              </span>
+            </div>
+            <div class="form-validation" *ngIf="formUsername.invalid && loginClicked">required</div>
+          </div>
+          <div class="field">
+            <label class="label is-size-7" style="margin-bottom: 0px;">PASSWROD</label>
+            <div class="control has-icons-left">
+              <input class="input" type="password" placeholder="PASSWORD" [formControl]="formPassword"/>
+              <span class="icon is-small is-left">
+                <i class="fa fa-lock"></i>
+              </span>
+            </div>
+            <div class="form-validation" *ngIf="formPassword.invalid && loginClicked">required</div>
+          </div>
+
+          <div class="field">
+            <button type="button" class="button is-fullwidth is-link " (click)="login()">LOGIN</button>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
